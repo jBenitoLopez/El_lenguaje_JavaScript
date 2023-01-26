@@ -1,2 +1,1 @@
-# javascript.info_El_lenguaje_JavaScript
-Apuntes y ejercicios de https://es.javascript.info/
+# Apuntes y ejercicios de javascript.info
