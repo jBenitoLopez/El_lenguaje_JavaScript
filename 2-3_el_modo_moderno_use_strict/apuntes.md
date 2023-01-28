@@ -14,3 +14,7 @@ Decir que se puede activar el modo estricto únicamente una función. Pero norma
 ## ¿Deberíamos utilizar “use strict”?
 
 El JavaScript moderno admite “clases” y “módulos”, estructuras de lenguaje avanzadas (que seguramente llegaremos a ver), que automáticamente habilitan use strict. Entonces no necesitamos agregar la directiva "use strict" si las usamos.
+
+---
+
+[Index](../README.md)

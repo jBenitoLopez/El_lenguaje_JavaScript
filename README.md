@@ -1,12 +1,14 @@
 # Apuntes y ejercicios de [Javascript.INFO](https://es.javascript.info/type-conversions)
 
 ## Una introducción
+
 [1.1 Una introducción a JavaScript](1-1_una_introducción_a_javascript/apuntes.md)<br>
 [1.2 Manuales y especificaciones](1-2_manuales_y_especificaciones/apuntes.md)<br>
 [1.3 Editores de Código](1-3_editores_de_codigo/apuntes.md)<br>
-[1.4 Consola de desarrollador](1-4_editores_de_codigo/apuntes.md)<br>
+[1.4 Consola de desarrollador](1-4_consola_de_desarrollador/apuntes.md)<br>
 
 ## Fundamentos de JavaScript
+
 [2.1 ¡Hola, mundo!](2-1_hola_mundo/apuntes.md)<br>
 [2.2 Estructura del código](2-2_estructura_del_codigo/apuntes.md)<br>
 [2.3 El modo moderno, "use strict"](2-3_el_modo_moderno_use_strict/apuntes.md)<br>

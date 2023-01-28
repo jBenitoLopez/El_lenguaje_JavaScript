@@ -17,3 +17,7 @@ Hay dos principales tipos de editores de código: IDEs y editores livianos.
   - Sublime Text (multiplataforma, shareware).
   - Notepad++ (Windows, gratuito).
   - Vim y Emacs son también interesantes si sabes cómo usarlos.
+
+---
+
+[Index](../README.md)

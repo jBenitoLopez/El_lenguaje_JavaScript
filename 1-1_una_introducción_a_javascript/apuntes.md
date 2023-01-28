@@ -46,3 +46,7 @@
 - Kotlin es un lenguaje moderno, seguro y conciso que puede apuntar al navegador o a Node.
 
 Hay más.
+
+---
+
+[Index](../README.md)

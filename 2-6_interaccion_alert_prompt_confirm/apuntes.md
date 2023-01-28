@@ -64,3 +64,7 @@ Ese es el precio de la simplicidad. Existen otras formas de mostrar ventanas má
 ## Tareas
 
 Crea una página web que pida un nombre y lo muestre.
+
+---
+
+[Index](../README.md)

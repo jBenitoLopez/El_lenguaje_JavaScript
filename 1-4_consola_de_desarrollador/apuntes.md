@@ -8,3 +8,7 @@ Las herramientas de desarrollo son potentes y tienen muchas características que
 
 En la página [bug.html](bug.html) puedes observar un error en la consola.
 `Uncaught ReferenceError: lalala is not defined at bug.html:12:5`
+
+---
+
+[Index](../README.md)

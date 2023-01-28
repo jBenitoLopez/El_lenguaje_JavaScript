@@ -7,3 +7,7 @@ Los comentarios de una línea comienzan con dos caracteres de barra diagonal //.
 Los comentarios de varias líneas comienzan con una barra inclinada y un asterisco /_ y terminan con un asterisco y una barra inclinada _/.
 
 No puede haber /_..._/ dentro de otro /_..._/.
+
+---
+
+[Index](../README.md)

@@ -20,3 +20,7 @@ Se puede acceder en [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 - [https://caniuse.com](https://caniuse.com)
 - [https://kangax.github.io/compat-table](https://kangax.github.io/compat-table)
+
+---
+
+[Index](../README.md)

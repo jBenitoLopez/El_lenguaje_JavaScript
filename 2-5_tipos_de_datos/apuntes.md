@@ -255,3 +255,7 @@ alert( `Hola ${"name"}` ); // ?
 
 alert( `Hola ${name}` ); // ?
 ```
+
+---
+
+[Index](../README.md)
