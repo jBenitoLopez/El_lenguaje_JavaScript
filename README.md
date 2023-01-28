@@ -1,4 +1,4 @@
-# Apuntes y ejercicios de _javascript.info_
+# Apuntes y ejercicios de [Javascript.INFO](https://es.javascript.info/type-conversions)
 
 ## Una introducción
 [1.1 Una introducción a JavaScript](1-1_una_introducción_a_javascript/apuntes.md)<br>
