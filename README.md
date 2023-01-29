@@ -17,7 +17,7 @@
 [2.6 Interacción: alert, prompt, confirm](2-6_interaccion_alert_prompt_confirm/apuntes.md)<br>
 
 [2.7 Conversiones de Tipos](2-7_conversiones_de_tipos/apuntes.md)<br>
-[2.8 Operadores básicos, matemáticas](2-8_operadores_basicos,_matematicas/apuntes.md)<br>
+[2.8 Operadores básicos, matemáticas](2-8_operadores_basicos_matematicas/apuntes.md)<br>
 [2.9 Comparaciones](2-9_comparaciones/apuntes.md)<br>
 [2.10 Ejecución condicional: if, '?'](2-10_ejecucion_condicional/apuntes.md)<br>
 [2.11 Operadores Lógicos](2-11_operadores_logicos/apuntes.md)<br>
