@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operadores básicos</title>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Tareas Operadores</h1>
+  <script>
+    "strict mode"
+    {
+      // ¿Cuáles son los valores finales de todas las variables a, b, c y d después del código a continuación?
+      let a = 1,
+          b = 1;
+
+      let c = ++a; // 2
+      let d = b++; // 1
+    }
+
+    {
+      // ¿Cuáles son los valores de ‘a’ y ‘x’ después del código a continuación?
+      let a = 2;
+      let x = 1 + (a *= 2);
+
+      // a = 4
+      // x = 5
+
+    }
+    {
+      // Conversiones de tipos
+      let a = "" + 1 + 0 // "10" ✓
+      let b = "" - 1 + 0 // -1 ✓
+      let c = true + false // 1 ✓
+      let d = 6 / "3" // 2 ✓
+      let e = "2" * "3" // 6 ✓
+      let f = 4 + 5 + "px" // "9px" ✓
+      let g = "$" + 4 + 5 // "$45" ✓ 
+      let h = "4" - 2 // 2 ✓
+      let i = "4px" - 2 // NaN ✓
+      let j = "  -9  " + 5 // "  -9  5" ✓
+      let k = "  -9  " - 5 // -14 ✓
+      let l = null + 1 // 1  ✓
+      let m = undefined + 1 // NaN
+      let n = " \t \n" - 2 // -2
+    }
+    {
+      // Corregir la adición
+
+      let a = +prompt("¿Primer número?", 1);
+      let b = +prompt("¿Segundo número?", 2);
+
+      alert(a + b); // 3
+    } 
+  </script>
+</body>
+</html>
