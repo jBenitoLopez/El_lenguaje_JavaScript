@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale="1.0" />
+    <title>Logical Operators</title>
+  </head>
+  <body>
+    <h1>Tareas - Logical Operators</h1>
+    <script>
+      {
+        /*
+          ### ¿Cuál es el resultado de OR?
+          ¿Cuál será la salida del siguiente código?
+        */
+        // alert(null || 2 || undefined); // 2
+      }
+      {
+        /*
+          ### ¿Cuál es el resultado de las alertas aplicadas al operador OR?
+
+          ¿Cuál será la salida del siguiente código?
+        */
+
+        // alert(alert(1) || 2 || alert(3)); // 1 y despues 2
+
+        /*
+          La llamada a alert no retorna un valor. O, en otras palabras, retorna undefined.
+
+          El primer OR || evalúa el operando de la izquierda alert(1). Eso muestra el primer mensaje con 1.
+          El alert retorna undefined, por lo que OR se dirige al segundo operando buscando un valor verdadero.
+          El segundo operando 2 es un valor verdadero, por lo que se detiene la ejecución, se retorna 2 y es mostrado por el alert exterior.
+          No habrá 3 debido a que la evaluación no alcanza a alert(3).
+        */
+      }
+      {
+        /*
+          ### ¿Cuál es el resultado de AND?
+          ¿Cuál será la salida del siguiente código?
+        */
+        // alert(1 && null && 2); // null
+      }
+      {
+        /*
+          ### ¿Cuál es el resultado de las alertas aplicadas al operador AND?
+
+          ¿Cuál será la salida del siguiente código?
+          */
+        // alert(alert(1) && alert(2)); // 1 , undefined
+        /*
+          La respuesta: 1 y después undefined.
+
+          La llamada a alert retorna undefined (solo muestra un mensaje, así que no hay un valor que retornar relevante)
+
+          Debido a ello, && evalúa el operando de la izquierda (imprime 1) e inmediatamente se detiene porque undefined es un valor falso. Como && busca un valor falso y lo retorna, terminamos.
+        */
+      }
+      {
+        /*
+          ### El resultado de OR AND OR
+
+          ¿Cuál será el resultado?
+
+        */
+        // alert(null || (2 && 3) || 4); // null, 3
+
+        /*
+        La respuesta: 3.
+        La precedencia de AND && es mayor que la de ||, así que se ejecuta primero.
+
+        El resultado de 2 && 3 = 3, por lo que la expresión se convierte en:
+
+        null || 3 || 4
+        Ahora el resultado será el primer valor verdadero: 3.
+        */
+      }
+      {
+        /*
+          ### Comprueba el rango por dentro
+
+          Escribe una condición “if” para comprobar que age(edad) está entre 14 y 90 inclusive.
+
+          “Inclusive” significa que age puede llegar a ser uno de los extremos, 14 o 90.
+        */
+        // const edad = 40;
+        // if(edad >= 14 && edad <= 90)
+        //   alert("Esta dentro del rango de edad!")
+      }
+      {
+        /*
+          ### Comprueba el rango por fuera
+
+          Escribe una condición if para comprobar que age NO está entre 14 y 90 inclusive.
+
+          Crea dos variantes: la primera usando NOT !, y la segunda sin usarlo.
+        */
+        // const edad = 11;
+
+        // if( edad < 14 || edad > 90)
+        //   alert("esta fuera de rango 1")
+
+        // if(!(edad >= 14 && edad <= 90))
+        // alert("esta fuera de rango 2")
+      }
+      {
+        /*
+          ### Un pregunta acerca de "if"
+
+          ¿Cuáles de estos alerts va a ejecutarse?
+          ¿Cuáles serán los resultados de las expresiones dentro de if(...)?
+
+          if (-1 || 0) alert("primero"); // primero
+          if (-1 && 0) alert("segundo"); // no hay alert
+          if (null || (-1 && 1)) alert("tercero"); // tercero
+
+          // Se ejecuta
+          // El operador && tiene mayor precedencia que ||
+          // Así que -1 && 1 se ejecuta primero, dándonos la cadena:
+          // null || -1 && 1  ->  null || 1  ->  1
+        */
+      }
+      {
+        /*
+          ### Comprueba el inicio de sesión
+
+          Escribe un código que pregunte por el inicio de sesión con propmt.
+
+          Si el visitante ingresa "Admin", entonces prompt(pregunta) por una contraseña, si la entrada es una linea vacía o Esc – muestra “Cancelado.”, si es otra cadena de texto – entonces muestra “No te conozco”.
+
+          La contraseña se comprueba de la siguiente manera:
+
+          - Si es igual a “TheMaster”, entonces muestra “Bienvenido!”,
+          - Si es otra cadena de texto – muetra “Contraseña incorrecta”,
+          - Para una cadena de texto vacía o una entrada cancelada, muestra “Cancelado.”
+
+          El esquema:
+          xxx
+
+          Por favor usa bloques anidados de `if`. Piensa en la legibilidad general del código.
+
+          Pista: si se le pasa una entrada vacía a un prompt, retorna una cadena de texto vacía `''`. Presionando ESC durante un prompt retorna `null`.
+        */
+        const usuario = prompt("Pon tu usuario: ")
+        let contrasenha;
+
+        if(usuario === 'Admin')
+          contrasenha = prompt("Pon tu contraseña: ")
+        else if(usuario.length > 0)
+          alert("No te conozcos")
+        else
+          alert("Cancelado")
+
+
+        if(contrasenha === 'TheMaster')
+          alert("Bienvenido!")
+        else if(contrasenha.length > 0)
+          alert("Contraseña incorrecta")
+        else
+          alert("Cancelado")
+
+        
+      }
+    </script>
+  </body>
+</html>
