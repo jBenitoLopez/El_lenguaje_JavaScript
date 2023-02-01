@@ -29,5 +29,3 @@
 [2.16 Expresiones de función](2-16_expresiones_de_funcion/apuntes.md)<br>
 [2.17 Funciones Flecha, lo básico](2-17_funciones_flecha_basico/apuntes.md)<br>
 [2.18 Especiales JavaScript](2-18_especiales_javascript/apuntes.md)<br>
-
-**https://www.u-convert.com/**
