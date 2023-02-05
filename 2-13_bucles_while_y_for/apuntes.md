@@ -519,3 +519,7 @@ Escribe el código que muestre números primos en el intervalo de `2` a `n`.
 Para `n = 10` el resultado será `2, 3, 5, 7`.
 
 PD. El código debería funcionar para cualquier `n`, no debe estar programado para valores fijos.
+
+---
+
+[Index](../README.md)
