@@ -145,3 +145,7 @@ ask(
 
 // Se ve corto y limpio, ¿verdad?
 ```
+
+---
+
+[Index](../README.md)
