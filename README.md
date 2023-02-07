@@ -29,3 +29,23 @@
 [2.16 Expresiones de función](2-16_expresiones_de_funcion/apuntes.md)<br>
 [2.17 Funciones Flecha, lo básico](2-17_funciones_flecha_basico/apuntes.md)<br>
 [2.18 Especiales JavaScript](2-18_especiales_javascript/apuntes.md)<br>
+
+## Calidad del código
+
+[3.1 Debugging en el navegador](3-1_debugging_en_el_navegador/apuntes.md)<br>
+[3.2 Estilo de codificación](3-2_estilo_de_codificación/apuntes.md)<br>
+[3.3 Comentarios](3-3_comentarios/apuntes.md)<br>
+[3.4 Código ninja](3-4_código_ninja/apuntes.md)<br>
+[3.5 Test automatizados con Mocha](3-5_test_automatizados_con_mocha/apuntes.md)<br>
+[3.6 Polyfills y transpiladores](3-6_polyfills_y_transpiladores/apuntes.md)<br>
+
+## Objetos: lo básico
+
+[4.1 Objetos](4-1_objetos/apuntes.md)<br>
+[4.2 Referencias de objetos y copia](4-2_referencias_de_objetos_y_copia/apuntes.md)<br>
+[4.3 Recolección de basura](4-3_recolección_de_basura/apuntes.md)<br>
+[4.4 Métodos del objeto, "this"](4-4_metodos_del_objeto_this/apuntes.md)<br>
+[4.5 Constructor, operador "new"](4-5_constructor,_operador_new/apuntes.md)<br>
+[4.6 Encadenamiento opcional '?.'](4-6_encadenamiento_opcional/apuntes.md)<br>
+[4.7 Tipo Symbol](4-7_tipo_symbol/apuntes.md)<br>
+[4.8 Conversión de objeto a valor primitivo](4-8_conversion_de_objeto_a_valor_primitivo/apuntes.md)<br>
