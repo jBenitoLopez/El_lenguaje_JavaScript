@@ -165,3 +165,7 @@ Los buenos comentarios nos permiten mantener bien el código, volver después de
 - Escríbelos solo si es imposible escribir el código de manera tan simple y auto descriptiva que no los necesite.
 
 Los comentarios también son usados para herramientas de auto documentación como JSDoc3: los leen y generan documentación en HTML (o documentos en otros formatos).
+
+---
+
+[Index](../README.md)
