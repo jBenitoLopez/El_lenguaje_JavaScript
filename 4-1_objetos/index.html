@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tareas: Objetos</title>
+  </head>
+  <body>
+    <h1>Tareas: Objetos</h1>
+    <script>
+      /*__Hola, objeto__
+
+        Escribe el código, una línea para cada acción:
+
+        1. Crea un objeto `user` vacío.
+        2. Agrega la propiedad `name` con el valor `John`.
+        3. Agrega la propiedad `surname` con el valor `Smith`.
+        4. Cambia el valor de `name` a `Pete`.
+        5. Remueve la propiedad `name` del `objeto`.
+      */
+      // {
+      //   function tarea1() {
+      //     const user = {};
+      //     user.name = "John";
+      //     user.surname = "Smith";
+      //     console.log("3.", structuredClone(user));
+      //     user.name = "Pete";
+      //     console.log("4.", structuredClone(user));
+      //     delete user.name;
+      //     console.log("5.", structuredClone(user));
+      //   }
+      //   tarea1();
+      // }
+
+      /*Verificar los vacíos
+
+        Escribe la función isEmpty(obj) que devuelva el valor true si el objeto no tiene propiedades, en caso contrario false.
+
+        Debería funcionar así:
+
+        let schedule = {};
+        alert( isEmpty(schedule) ); // true
+        schedule["8:30"] = "Hora de levantarse";
+        alert( isEmpty(schedule) ); // false
+      */
+      // {
+      //   function isEmpty(obj) {
+      //     return !Object.keys(obj).length > 0;
+      //   }
+
+      //   let shedule = {};
+      //   console.log("1.", isEmpty(shedule));
+      //   shedule["8:30"] = "Hora de levantarse";
+      //   console.log("2.", isEmpty(shedule));
+      // }
+      /*Suma de propiedades de un objeto
+        Tenemos un objeto que almacena los salarios de nuestro equipo:
+
+        let salaries = {
+          John: 100,
+          Ann: 160,
+          Pete: 130
+        }
+        Escribe el código para sumar todos los salarios y almacenar el resultado en la variable sum. En el ejemplo de arriba nos debería dar 390.
+
+        Si salaries está vacío entonces el resultado será 0.
+      */
+      // {
+      //   let salaries = {
+      //     John: 100,
+      //     Ann: 160,
+      //     Pete: 130,
+      //   };
+      //   let suma = 0;
+      //   for (const key in salaries) {
+      //     suma += salaries[key];
+      //   }
+      //   console.log("suma :>> ", suma);
+      // }
+      /*Multiplicar propiedades numéricas por 2
+        Crea una función multiplyNumeric(obj) que multiplique todas las propiedades numéricas de obj por 2.
+
+        Por ejemplo:
+
+        // Antes de la llamada
+        let menu = {
+          width: 200,
+          height: 300,
+          title: "Mi menú"
+        };
+
+        multiplyNumeric(menu);
+
+        // Después de la llamada
+        menu = {
+          width: 400,
+          height: 600,
+          title: "Mi menú"
+        };
+        Nota que multiplyNumeric no necesita devolver nada. Debe modificar el objeto en su lugar.
+
+        P.D. Usa typeof para verificar si hay un número aquí.
+      */
+      // {
+      //   // Antes de la llamada
+      //   let menu = {
+      //     width: 200,
+      //     height: 300,
+      //     title: "Mi menú",
+      //   };
+
+      //   function multiplyNumeric(obj) {
+      //     for (const key in obj) {
+      //       if (typeof obj[key] === "number") {
+      //         obj[key] *= 2;
+      //       }
+      //     }
+      //   }
+      //   multiplyNumeric(menu);
+      //   // Después de la llamada
+      //   console.log("menu :>> ", menu);
+      // }
+    </script>
+  </body>
+</html>
