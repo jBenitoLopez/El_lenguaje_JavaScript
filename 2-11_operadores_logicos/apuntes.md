@@ -4,7 +4,8 @@ Hay cuatro operadores lógicos en JavaScript: `||` (O), `&&` (Y), `!` (NO), `??`
 
 Aunque sean llamados lógicos, pueden ser aplicados a valores de cualquier tipo, no solo booleanos. El resultado también puede ser de cualquier tipo.
 
-##|| (OR)
+## || (OR)
+
 El operador `OR` se representa con dos símbolos de linea vertical:
 
 ```js
