@@ -65,7 +65,8 @@ Esto es útil cuando necesitamos detener la ejecución para un determinado valor
 
 ---
 
-##El comando “debugger”
+## El comando “debugger”
+
 También podemos pausar el código utilizando el comando `debugger`, así:
 
 ```js
