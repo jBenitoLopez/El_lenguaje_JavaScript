@@ -288,11 +288,13 @@ Aumentar o disminuir un número en uno es una de las operaciones numéricas más
 Entonces, hay operadores especiales para ello:
 
 - Incremento `++` incrementa una variable por `1`:
+
   ```JS
   let counter = 2;
   counter++;      // funciona igual que counter = counter + 1, pero es más corto
   alert( counter ); // 3
   ```
+
 - Decremento -- decrementa una variable por 1:
 
 ```JS
