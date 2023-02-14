@@ -39,20 +39,27 @@ Una construcción de una sola línea, como `if (condition) doSomething()`, es un
 Aquí están las variantes anotadas para que puedas juzgar la legibilidad por ti mismo.
 
 1. 😠 Los principiantes a veces hacen eso. ¡Malo! Las llaves no son necesarias:
+
    ```js
    if (n < 0) {
      alert(`Power ${n} is not supported`);
    }
    ```
+
 2. 😠 Dividir en una línea separada sin llaves. Nunca haga eso, es fácil cometer un error al agregar nuevas líneas:
+
    ```js
    if (n < 0) alert(`Power ${n} is not supported`);
    ```
+
 3. 😏 Una línea sin llaves: aceptable, si es corta:
+
    ```js
    if (n < 0) alert(`Power ${n} is not supported`);
    ```
+
 4. 😃 La mejor variante:
+
    ```js
    if (n < 0) {
      alert(`Power ${n} is not supported`);
