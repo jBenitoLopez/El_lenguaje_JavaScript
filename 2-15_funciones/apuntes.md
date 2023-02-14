@@ -1,4 +1,5 @@
-#Funciones
+# Funciones
+
 Muy a menudo necesitamos realizar acciones similares en muchos lugares del `script`.
 
 Por ejemplo, debemos mostrar un mensaje atractivo cuando un visitante inicia sesión, cierra sesión y tal vez en otros momentos.
@@ -227,7 +228,7 @@ Por otro lado, se llamará independientemente cada vez que `text` se omita.
 
 ---
 
-** Parámetros predeterminados en viejo código JavaScript**
+**Parámetros predeterminados en viejo código JavaScript**
 
 Años atrás, JavaScript no soportaba la sintaxis para parámetros predeterminados. Entonces se usaban otras formas para especificarlos.
 
