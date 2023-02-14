@@ -28,7 +28,7 @@ Existen sutiles diferencias entre let y var, pero no nos interesan en este momen
 
 Cuando el nombre contiene varias palabras, se suele usar el estilo camelCase.
 
-### Nombres válidos:
+### Nombres válidos
 
 ```JS
 let userName;
@@ -40,7 +40,7 @@ let _ = 2; // y ahora una variable con el nombre "_"
 alert($ + _); // 3
 ```
 
-### Nombres incorrectos:
+### Nombres incorrectos
 
 ```JS
 let 1a; // no puede iniciar con un dígito
