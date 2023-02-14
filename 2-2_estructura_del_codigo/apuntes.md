@@ -4,7 +4,7 @@ Recomendamos colocar puntos y coma entre las sentencias, incluso si están separ
 
 Los comentarios de una línea comienzan con dos caracteres de barra diagonal //.
 
-Los comentarios de varias líneas comienzan con una barra inclinada y un asterisco /_ y terminan con un asterisco y una barra inclinada _/.
+Los comentarios de varias líneas comienzan con una barra inclinada y un asterisco /_y terminan con un asterisco y una barra inclinada_/.
 
 No puede haber /_..._/ dentro de otro /_..._/.
 
