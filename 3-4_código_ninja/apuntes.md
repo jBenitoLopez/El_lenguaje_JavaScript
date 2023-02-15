@@ -1,4 +1,5 @@
 # Código ninja
+>
 >Aprender sin pensar es inútil. Pensar sin aprender, peligroso.<br>
 >*Confucio (Analectas)*
 
@@ -19,20 +20,24 @@ Muchos intentan seguir los caminos de los ninjas. Pocos tienen éxito.
 ----
 
 ## La brevedad es el alma del ingenio
+
 Haz el código lo más corto posible. Demuestra cuán inteligente eres.
 
 Deja que las características sutiles del lenguaje te guíen.
 
 Por ejemplo, echa un vistazo a este operador ternario `'?'`:
+
 ```js
 // tomado de una librería de javascript muy conocida
 i = i ? i < 0 ? Math.max(0, len + i) : i : 0;
 ```
+
 Fascinante, ¿cierto?. Si escribes de esa forma, un desarrollador que se encuentre esta línea e intente entender cuál es el valor de `i` la va a pasar muy mal. Por lo que tendrá que venir a ti, buscando una respuesta.
 
 Diles que mientras más corto mucho mejor. Guíalos a los caminos del ninja.
 
 ## Variables de una sola letra
+>
 >El Dao se esconde sin palabras. Solo el Dao está bien comenzado y bien terminado.<br>
 >*Laozi (Tao Te Ching)*
 
@@ -45,9 +50,11 @@ Una variable corta desaparece en el código como lo hace un ninja en un bosque. 
 Una variable exótica como el contador de un bucle es especialmente genial si el cuerpo del bucle toma 1-2 páginas (hazlo más grande si puedes). Entonces si alguien mira en las profundidades del bucle, no será capaz de figurarse rápidamente que la variable llamada `x` es el contador del bucle.
 
 ## Usa abreviaciones
+
 Si las reglas del equipo prohíben el uso de nombres de una sola letra o nombres vagos – acórtalos, haz abreviaciones.
 
 Como esto:
+
 - list → lst.
 - userAgent → ua.
 - browser → brsr.
@@ -56,6 +63,7 @@ Como esto:
 Solo aquel con buena intuición será capaz de entender dichos nombres. Intenta acortar todo. Solo una persona digna debería ser capaz de sostener el desarrollo de tu código.
 
 ## Vuela alto. Sé abstracto
+>
 >El gran cuadrado no tiene esquina<br>
 >La gran vasija se completa por última vez,<br>
 >La gran nota es un sonido enrarecido,<br>
@@ -82,6 +90,7 @@ Cuando estés escogiendo un nombre intenta usar la palabra más abstracta. Como 
 - **…Pero, ¿Y si ya no hay más de tales nombres?** Simplemente añade un número: `data1`, `item2`, `elem5`…
 
 ## Prueba de atención
+
 Solo un programador realmente atento debería ser capaz de entender tu código. Pero, ¿cómo comprobarlo? ``
 
 **Una de las maneras – usa nombre de variables similares, como** `date` y `data`.
@@ -91,6 +100,7 @@ Combínalos donde puedas.
 Una lectura rápida de dicho código se hace imposible. Y cuando hay un error de tipografía…. Ummm… Estamos atrapados por mucho tiempo, hora de tomar té.
 
 ## Sinónimos inteligentes
+>
 >El Tao que puede ser expresado no es el Tao eterno. El nombre que puede ser nombrado no es el nombre eterno.
 >*Lao Tse (Tao Te Ching)*
 
@@ -109,12 +119,12 @@ Para dos funciones con importantes diferencias, ¡usa el mismo prefijo!
 Por ejemplo, la función `imprimirPágina(página)` usara una impresora. Y la función `imprimirTexto(texto)` mostrará el texto en la pantalla… Deja que un lector no familiar a tu código piense bien sobre una función llamada de forma similar `imprimirMensaje`: "¿Dónde coloca el mensaje? ¿A una impresora o en la pantalla?. Para que realmente se destaque, ¡`imprimirMensaje(mensaje)` debería mostrar el mensaje en una nueva ventana!
 
 ## Reutilizar nombres
+>
 >Una vez que el todo se divide, las partes<br>
 >necesitan nombres.<br>
 >Ya hay suficientes nombres.<br>
 >Uno debe saber cuándo parar.<br>
 >*Laozi (Tao Te Ching)*<br>
-
 
 Añade una nueva variable sólo cuando sea necesario.
 
@@ -127,6 +137,7 @@ Eso hará que sea realmente difícil identificar qué es exactamente la variable
 **Una variante avanzada del enfoque es reemplazar los valores de forma encubierta con algo parecido en la mitad de un bucle o una función.**
 
 Por ejemplo:
+
 ```js
 function ninjaFunction(elem) {
   // 20 líneas de código trabajando con elem
@@ -142,6 +153,7 @@ Un colega programador que quiera trabajar con `elem` en la segunda mitad de la f
 Visto regularmente en códigos. Letalmente efectivo, incluso contra ninjas experimentados.
 
 ## Guiones bajos por diversión
+
 Coloca guiones bajos `_` y `__` antes de los nombres de las variables. Como `_name` o `__value`. Sería genial si solo tú sabes su significado. O, mejor, añádelos simplemente por diversión, sin ningún significado especial. O diferentes significados en diferentes lugares.
 
 Matarás dos pájaros de un solo tiro. Primero, el código se hará más largo y menos legible, y segundo, un colega desarrollador podría gastar una gran cantidad de tiempo intentado entender el significado del guion bajo.
@@ -149,16 +161,19 @@ Matarás dos pájaros de un solo tiro. Primero, el código se hará más largo y
 Un ninja inteligente coloca los guiones bajos en un solo lugar del código y los evita en otros lugares. Eso hace que el código sea mucho más frágil y aumenta la probabilidad de errores futuros.
 
 ## Muestra tu amor
+
 ¡Deja que todos vean cuán magníficas son tus entidades! Nombres como `superElement`, `megaFrame` and `niceItem` iluminaran sin duda al lector.
 
 En efecto, por una parte, algo es escrito: `super..`, `mega..`, `nice..`, pero por otra parte – no da ningún detalle. Un lector podría decidir mirar por un significado oculto y meditar por una hora o dos.
 
 ## Superpón variables externas
+>
 >Cuando está a la luz, no puede ver nada en la oscuridad.<br>
 >Cuando está en la oscuridad, puede ver todo a la luz.<br>
 >*Guan Yin Zi*<br>
 
 Usa los mismos nombres para variables dentro y fuera de una función. Así de simple. Sin el esfuerzo de inventar nuevos nombres.
+
 ```js
 let user = authenticateUser();
 
@@ -176,7 +191,8 @@ Un programador que se adentra en `render` probablemente no notara que hay un `us
 
 Entonces intentaran trabajar con `user` asumiendo que es la variable externa, el resultado de `authenticateUser()`… ¡Se activa la trampa! Hola, depurador…
 
-## ¡Efectos secundarios en todas partes!
+## ¡Efectos secundarios en todas partes
+
 Hay muchas funciones que parecen que no cambian nada. Como `estaListo()`, `comprobarPermiso()`, `encontrarEtiquetas()`… Se asume que sacan los cálculos, encuentran y regresan los datos, sin cambiar nada fuera de ellos. En otras palabras, sin “efectos secundarios”.
 
 **Un truco realmente bello es añadirles una acción “útil”, además de su tarea principal.**
@@ -187,11 +203,11 @@ Otra forma de sorprender es retornar un resultado no estándar
 
 ¡Muestra tu pensamiento original! Deja que la llamada de comprobarPermiso retorne no true/false sino un objeto complejo con los resultados de tu comprobación.
 
-## ¡Funciones poderosas!
+## ¡Funciones poderosas
+>
 >El gran Tao fluye por todas partes,<br>
 >tanto a la izquierda como a la derecha.<br>
 >*Laozi (Tao Te Ching)*
-
 
 No limites la función por lo que está escrito en el nombre. Se más abierto.
 
@@ -204,6 +220,7 @@ Uniendo muchas acciones en una protege tu código de reúsos.
 Imagina, otro desarrollador quiere solo comprobar el correo, y no mostrar ningún mensaje. Tu función `validarEmail(email)` que hace ambas no le será de utilidad. Así que no romperán tu meditación preguntando cualquier cosa sobre ello.
 
 ## Resumen
+
 Todos los consejos anteriores fueron extraidos de código real… Algunas veces, escrito por desarrolladores experimentados. Quizás incluso más experimentado que tú ;)
 
 - Sigue alguno de ellos, y tu código estará lleno de sorpresas.
