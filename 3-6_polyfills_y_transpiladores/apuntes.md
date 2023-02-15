@@ -76,6 +76,7 @@ Dos librerías interesantes de polyfills son:
 - [polyfill.io](https://polyfill.io/v3/) – servicio que brinda un script con polyfills dependiendo de las características del navegador del usuario.
 
 ## Resumen
+
 En este artículo queremos motivarte a estudiar las características más modernas y hasta experimentales del lenguaje, incluso si aún no tienen buen soporte en los intérpretes JavaScript.
 
 Pero no olvides usar transpiladores (si usas sintaxis u operadores modernos) y polyfills (para añadir funciones que pueden estar ausentes). Ellos se asegurarán de que el código funcione.
