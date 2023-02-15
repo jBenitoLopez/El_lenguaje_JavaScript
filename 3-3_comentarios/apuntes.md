@@ -1,4 +1,5 @@
 # Comentarios
+
 Como hemos aprendido en el capítulo [Estructura del código](https://es.javascript.info/structure), los comentarios pueden ser de una sola línea: comenzando con `//` y de múltiples líneas: `/* ... */`.
 
 Normalmente los usamos para describir cómo y por qué el código funciona.
@@ -6,7 +7,9 @@ Normalmente los usamos para describir cómo y por qué el código funciona.
 A primera vista, los comentarios pueden ser obvios, pero los principiantes en programación generalmente los usan incorrectamente.
 
 ## Comentarios incorrectos
+
 Los principiantes tienden a utilizar los comentarios para explicar “lo que está pasando en el código”. Así:
+
 ```js
 // Este código hará esto (...) y esto (...)
 // ...y quién sabe qué más...
@@ -20,7 +23,9 @@ Pero en un buen código, la cantidad de comentarios “explicativos” debería 
 Existe una fantástica regla al respeto: “si el código es tan poco claro que necesita un comentario, tal vez en su lugar debería ser reescrito.”.
 
 ### Receta: funciones externas
+
 A veces es beneficioso reemplazar trozos de código con funciones, como aquí:
+
 ```js
 function showPrimes(n) {
   nextPrime:
@@ -35,7 +40,9 @@ function showPrimes(n) {
   }
 }
 ```
+
 La mejor variante, con una función externa `isPrime`:
+
 ```js
 function showPrimes(n) {
 
@@ -54,10 +61,13 @@ function isPrime(n) {
   return true;
 }
 ```
+
 Ahora podemos entender el código fácilmente. La propia función se convierte en comentario. Este tipo de código se le llama *auto descriptivo*.
 
 ### Receta: crear funciones
+
 Y si tenemos una larga “hoja de código” como esta:
+
 ```js
 // aquí añadimos whiskey
 for(let i = 0; i < 10; i++) {
@@ -76,7 +86,9 @@ for(let t = 0; t < 3; t++) {
 
 // ...
 ```
+
 Entonces, una versión mejor puede ser reescribirlo en funciones de esta manera:
+
 ```js
 addWhiskey(glass);
 addJuice(glass);
@@ -101,6 +113,7 @@ De nuevo, la propias funciones nos dicen qué está pasando. No hay nada que com
 En realidad, no podemos evitar totalmente los comentarios “explicativos”. Existen algoritmos complejos. Y existen “trucos” ingeniosos con el propósito de optimizar. Pero generalmente, tenemos que intentar mantener el código simple y auto descriptivo.
 
 ## Comentarios correctos
+
 Entonces, los comentarios explicativos suelen ser incorrectos. ¿Qué comentarios son correctos?
 
 **Describe la arquitectura**
@@ -111,6 +124,7 @@ Proporcionan una descripción general de alto nivel de los componentes, cómo in
 
 Hay una sintaxis especial [JSDoc](https://en.wikipedia.org/wiki/JSDoc) para documentar una función: utilización, parámetros, valor devuelto.
 Por ejemplo:
+
 ```js
 /**
   * Devuelve x elevado a la potencia de n.
@@ -149,6 +163,7 @@ Los comentarios que explican la solución correcta son muy importantes. Nos ayud
 Si el código tiene algo sutil y contraintuitivo, definitivamente vale la pena comentarlo.
 
 ## Resumen
+
 Una señal importante de un buen desarrollador son los comentarios: su presencia e incluso su ausencia.
 
 Los buenos comentarios nos permiten mantener bien el código, volver después de un retraso y usarlo de manera más efectiva.
