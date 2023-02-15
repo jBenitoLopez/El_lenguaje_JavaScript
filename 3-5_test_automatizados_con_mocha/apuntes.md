@@ -1,7 +1,9 @@
 # Test automatizados con Mocha
+
 Los tests automáticos serán usados en tareas que siguen, y son ampliamente usados en proyectos reales.
 
 ## ¿Por qué necesitamos tests?
+
 Cuando escribimos una función, normalmente imaginamos qué debe hacer: Para ciertos parámetros, qué resultado.
 
 Durante el desarrollo, podemos comprobar la función ejecutándola y comparando el resultado con la salida esperada. Por ejemplo, podemos hacer eso en la consola.
@@ -19,6 +21,7 @@ Todo esto es muy típico. Cuando desarrollamos algo, mantenemos muchos casos de 
 **Los tests automatizados implican escribir los tests por separado, además del código. Ellos ejecutan nuestras funciones de varias formas y comparan los resultados con los esperados.**
 
 ## Desarrollo guiado por comportamiento (Behavior Driven Development, BDD)
+
 Vamos a usar una técnica llamada [Desarrollo guiado por comportamiento](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_comportamiento) o por sus siglas en inglés, BDD.
 
 **BDD son tres cosas en uno: tests, documentación y ejemplos.**
@@ -26,6 +29,7 @@ Vamos a usar una técnica llamada [Desarrollo guiado por comportamiento](https:/
 Para entender BDD, examinaremos un caso de desarrollo práctico:
 
 ## Desarrollo de “pow”: Especificación
+
 Digamos que queremos hacer una función `pow(x, n)` que eleve `x` a la potencia de un entero `n`. Asumimos que `n≥0`.
 
 Esta tarea es sólo un ejemplo: Hay un operador `**` en JavaScript que hace eso, pero queremos concentrarnos en el flujo de desarrollo que puede ser aplicado a tareas más complejas.
@@ -33,6 +37,7 @@ Esta tarea es sólo un ejemplo: Hay un operador `**` en JavaScript que hace eso,
 Antes de crear el código de `pow`, podemos imaginar lo que hace la función y describirlo.
 
 Esa descripción es llamada *especificación* o “spec” y contiene las descripciones de uso junto con los test para probarlas, como:
+
 ```js
 describe("pow", function() {
 
@@ -62,6 +67,7 @@ Las funciones `assert.*` son usadas para comprobar que pow funcione como esperam
 La especificación puede ser ejecutada, y hará los los test dictados en el bloque `it`. Lo veremos luego.
 
 ## El flujo de desarrollo
+
 El flujo de desarrollo se ve así:
 
 1. Se escribe una especificación inicial, con tests para la funcionalidad más básica.
@@ -79,6 +85,7 @@ Veamos el flujo de desarrollo en nuestro caso práctico.
 El primer paso ya está completo: tenemos una spec inicial para `pow`. Ahora, antes de realizar la implementación, usemos algunas librerías JavaScript para ejecutar los tests, solo para verificar que funcionan (van a fallar todos).
 
 ## La spec en acción
+
 En este tutorial estamos usando las siguientes librerías JavaScript para los tests:
 
 - [Mocha](https://mochajs.org/) – el framework central: provee funciones para test comunes como `describe` e `it` y la función principal que ejecuta los tests.
@@ -88,6 +95,7 @@ En este tutorial estamos usando las siguientes librerías JavaScript para los te
 Estas librerías son adecuadas tanto para tests en el navegador como en el lado del servidor. Aquí nos enfocaremos en el navegador.
 
 La página HTML con estos frameworks y la spec de `pow`:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -149,6 +157,7 @@ De momento, el test falla. Es lógico: tenemos el código vacío en la función 
 Para más adelante, ten en cuenta que hay avanzados test-runners (Herramientas para ejecutar los test en diferentes entornos de forma automática), como [karma](https://karma-runner.github.io/latest/index.html) y otros. Por lo que generalmente no es un problema configurar muchos tests diferentes.
 
 ## Implementación inicial
+
 Vamos a realizar una implementación simple de pow, suficiente para pasar el test:
 
 ```js
@@ -163,8 +172,8 @@ function pow(x, n) {
      alt="pow function"
      style="margin: 10px auto;" />
 
-
 ## Mejoramos el spec
+
 Lo que hemos hecho es una trampa. La función no funciona bien: ejecutar un cálculo diferente, como `pow(3,4)`, nos devuelve un resultado incorrecto, pero el test pasa.
 
 … pero la situación es habitual, ocurre en la práctica. Los tests pasan, pero la función no funciona bien. Nuestra especificación está incompleta. Necesitamos añadir más casos de uso a la especificación.
@@ -174,6 +183,7 @@ Vamos a incluir un test para ver si `pow(3,4) = 81`.
 Podemos escoger entre dos formas de organizar el test:
 
 1. La primera manera – añadir un `assert` más en el mismo `it`:
+
     ```js
     describe("pow", function() {
 
@@ -184,7 +194,9 @@ Podemos escoger entre dos formas de organizar el test:
 
     });
     ```
+
 2. La segunda – hacer dos tests:
+
     ```js
     describe("pow", function() {
 
@@ -217,11 +229,12 @@ El resultado:
      alt="pow function"
      style="margin: 10px auto;" />
 
-
 Como podemos esperar, el segundo falla. Nuestra función siempre devuelve `8` mientras el `assert` espera `27`.
 
 ## Mejoramos la implementación
+
 Vamos a escribir algo más real para que pasen los tests:
+
 ```js
 function pow(x, n) {
   let result = 1;
@@ -233,7 +246,9 @@ function pow(x, n) {
   return result;
 }
 ```
+
 Para estar seguros de que la función trabaja bien, vamos a hacer comprobaciones para más valores. En lugar de escribir bloques `it` manualmente, vamos a generarlos con un `for`:
+
 ```js
 describe("pow", function() {
 
@@ -258,9 +273,11 @@ El resultado:
      style="margin: 10px auto;" />
 
 ## Describe anidados
+
 Vamos a añadir más tests. Pero antes, hay que apuntar que la función `makeTest` y la instrucción `for` deben ser agrupados juntos. No queremos `makeTest` en otros tests, solo se necesita en el `for`: su tarea común es comprobar cómo `pow` eleva a una potencia concreta.
 
 Agrupar tests se realiza con `describe`:
+
 ```js
 describe("pow", function() {
 
@@ -297,6 +314,7 @@ En el futuro podemos añadir más `it` y `describe` en el primer nivel con funci
 Podemos configurar funciones `before/after` que se ejecuten antes/después de la ejecución de los tests, y también funciones `beforeEach/afterEach` que ejecuten antes/después de cada `it`.
 
 Por ejemplo:
+
 ```js
 describe("test", function() {
 
@@ -331,6 +349,7 @@ Normalmente, `beforeEach/afterEach` (b`efore/after`) son usados para realizar la
 -----
 
 ## Extender los spec
+
 La funcionalidad básica de `pow` está completa. La primera iteración del desarrollo está hecha. Cuando acabemos de celebrar y beber champán – sigamos adelante y mejorémosla.
 
 Como se dijo, la función `pow(x, n)` está dedicada a trabajar con valores enteros positivos `n`.
@@ -338,6 +357,7 @@ Como se dijo, la función `pow(x, n)` está dedicada a trabajar con valores ente
 Para indicar un error matemático, JavaScript normalmente devuelve `NaN` como resultado de una función. Hagamos lo mismo para valores incorrectos de `n`.
 
 Primero incluyamos el comportamiento en el spec(!):
+
 ```js
 describe("pow", function() {
 
@@ -379,6 +399,7 @@ Hay otras comprobaciones en Chai también [Chai](https://www.chaijs.com/), por e
 ----
 
 Así que podemos añadir un par de líneas a `pow`:
+
 ```js
 function pow(x, n) {
   if (n < 0) return NaN;
@@ -393,6 +414,7 @@ function pow(x, n) {
   return result;
 }
 ```
+
 Ahora funciona y todos los tests pasan:
 
 <img src="pow_extender_pass.png"
@@ -402,6 +424,7 @@ Ahora funciona y todos los tests pasan:
 [Abre el ejemplo final en un sandbox.](https://plnkr.co/edit/4smml70EnXC8QY9s?p=preview)
 
 ## Resumen
+
 En BDD, la especificación va primero, seguida de la implementación. Al final tenemos tanto la especificación como la implementación.
 
 El spec puede ser usado de tres formas:
@@ -436,9 +459,11 @@ En el tutorial encontrarás más adelante muchas tareas respaldadas con pruebas.
 Escribir tests requiere un buen conocimiento de JavaScript. Pero nosotros justo acabamos de empezar a aprenderlo. Así que para comenzar no es necesario que escribas tests, pero ahora eres capaz de leerlos incluso si son más complejos que en este capítulo.
 
 ## Tareas
+
 ### ¿Qué esta mal en el test?
 
 ¿Qué es incorrecto en el test de `pow` de abajo?
+
 ```js
 it("Eleva x a la potencia n", function() {
   let x = 5;
@@ -457,6 +482,7 @@ it("Eleva x a la potencia n", function() {
 P.S. El test es sintácticamente correcto y pasa.
 
 ### solución
+
 El test demuestra una tentación habitual del/a desarrollador/a al escribir tests.
 
 Lo que tenemos aquí son en realidad 3 pruebas, pero presentadas como una sola función con 3 afirmaciones.
