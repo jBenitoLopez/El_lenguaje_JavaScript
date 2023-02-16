@@ -49,3 +49,18 @@
 [4.6 Encadenamiento opcional '?.'](4-6_encadenamiento_opcional/apuntes.md)<br>
 [4.7 Tipo Symbol](4-7_tipo_symbol/apuntes.md)<br>
 [4.8 Conversión de objeto a valor primitivo](4-8_conversion_de_objeto_a_valor_primitivo/apuntes.md)<br>
+
+## Tipos de datos
+
+[5.1 Métodos en tipos primitivos](5-1_metodos_en_tipos_primitivos)<br>
+[5.2 Números](5-2_numeros)<br>
+[5.3 Strings](5-3_strings)<br>
+[5.4 Arrays](5-4_arrays)<br>
+[5.5 Métodos de arrays](5-5_metodos_de_arrays)<br>
+[5.6 Iterables](5-6_iterables)<br>
+[5.7 Map y Set](5-7_map_y_set)<br>
+[5.8 WeakMap y WeakSet](5-8_weakmap_y_weakset)<br>
+[5.9 Object.keys, values, entries](5-9_object_keys_values_entries)<br>
+[5.10 Asignación desestructurante](5-10_asignación_desestructurante)<br>
+[5.11 Fecha y Hora](5-11_fecha_y_hora)<br>
+[5.12 Métodos JSON, toJSON](5-12_metodos_json_tojson)<br>
