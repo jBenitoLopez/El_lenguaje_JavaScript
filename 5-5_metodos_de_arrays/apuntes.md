@@ -812,3 +812,756 @@ A primera vista puede parecer que hay demasiados métodos para aprender y un tan
 Revisa el ayudamemoria para conocerlos. Después realiza las prácticas de este capítulo para ganar experiencia con los métodos para arrays.
 
 Finalmente si en algún momento necesitas hacer algo con un array y no sabes cómo, vuelve a esta página, mira el ayudamemoria y encuentra el método correcto. Los ejemplos te ayudarán a escribirlos correctamente y pronto los recordarás automáticamente y sin esfuerzo.
+
+## Tareas
+
+### Transforma border-left-width en borderLeftWidth
+
+Escribe la función `camelize(str)` que convierta palabras separadas por guión como “mi-cadena-corta” en palabras con mayúscula “miCadenaCorta”.
+
+Esto sería: remover todos los guiones y que cada palabra después de un guión comience con mayúscula.
+
+Ejemplos:
+
+```js
+camelize("background-color") == 'backgroundColor';
+camelize("list-style-image") == 'listStyleImage';
+camelize("-webkit-transition") == 'WebkitTransition';
+```
+
+P.D. Pista: usa `split` para dividir el string en un array, transfórmalo y vuelve a unirlo (`join`).
+
+[Abrir en entorno controlado con pruebas](https://plnkr.co/edit/tOSeFWT8NnESlxHf?p=preview).
+
+----
+
+**solución**
+
+```js
+function camelize(str) {
+  return str
+    .split('-') // separa 'my-long-word' en el array ['my', 'long', 'word']
+    .map(
+      // convierte en mayúscula todas las primeras letras de los elementos del array excepto por el primero
+      // convierte ['my', 'long', 'word'] en ['my', 'Long', 'Word']
+      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(''); // une ['my', 'Long', 'Word'] en 'myLongWord'
+}
+```
+
+[Abrir la solución con pruebas en un entorno controlado](https://plnkr.co/edit/ZaiT7ckM0hBlV4ht?p=preview).
+
+----
+
+## Filtrar un rango
+
+Escribe una función `filterRange(arr, a, b)` que obtenga un array `arr`, busque los elementos con valor mayor o igual a `a` y menor o igual a `b` y devuelva un array con los resultados.
+
+La función no debe modificar el array. Debe devolver un nuevo array.
+
+Por ejemplo:
+
+```js
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (valores dentro del rango)
+
+alert( arr ); // 5,3,8,1 (array original no modificado)
+```
+
+[Abrir en entorno controlado con pruebas](https://plnkr.co/edit/8mmTA28C327Lnlqc?p=preview).
+
+----
+
+**solución**
+
+```js
+function filterRange(arr, a, b) {
+  // agregamos paréntesis en torno a la expresión para mayor legibilidad
+  return arr.filter(item => (a <= item && item <= b));
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (valores dentro del rango)
+
+alert( arr ); // 5,3,8,1 (array original no modificado)
+```
+
+[Abrir la solución con pruebas en un entorno controlado](https://plnkr.co/edit/1zygp6y0DRGvqhcD?p=preview).
+
+----
+
+## Filtrar rango "en el lugar"
+
+Escribe una función `filterRangeInPlace(arr, a, b)` que obtenga un array `arr` y remueva del mismo todos los valores excepto aquellos que se encuentran entre `a` y `b`. El test es: `a ≤ arr[i] ≤ b`.
+
+La función solo debe modificar el array. No debe devolver nada.
+
+Por ejemplo:
+
+```js
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // remueve los números excepto aquellos entre 1 y 4
+
+alert( arr ); // [3, 1]
+```
+
+[Abrir en entorno controlado con pruebas](https://plnkr.co/edit/Fdi0vPOXd3uGQODw?p=preview).
+
+----
+
+**solución**
+
+```js
+function filterRangeInPlace(arr, a, b) {
+
+  for (let i = 0; i < arr.length; i++) {
+    let val = arr[i];
+
+    // remueve aquellos elementos que se encuentran fuera del intervalo
+    if (val < a || val > b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+
+}
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // remueve los números excepto aquellos entre 1 y 4
+
+alert( arr ); // [3, 1]
+```
+
+[Abrir la solución con pruebas en un entorno controlado](https://plnkr.co/edit/4QygvAPYAKesiYtA?p=preview).
+
+----
+
+## Ordenar en orden decreciente
+
+```js
+let arr = [5, 2, 1, -10, 8];
+
+// ... tu código para ordenar en orden decreciente
+
+alert( arr ); // 8, 5, 2, 1, -10
+```
+
+----
+
+**solución**
+
+```js
+let arr = [5, 2, 1, -10, 8];
+
+arr.sort((a, b) => b - a);
+
+alert( arr );
+```
+
+----
+
+## Copia y ordena un array
+
+Supongamos que tenemos un array `arr`. Nos gustaría tener una copia ordenada del mismo, pero mantener `arr` sin modificar.
+
+Crea una función `copySorted(arr)` que devuelva esa copia.
+
+```js
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (sin cambios)
+```
+
+----
+
+**solución**
+
+Podemos usar `slice()` para crear una copia y realizar el ordenamiento en ella:
+
+```js
+function copySorted(arr) {
+  return arr.slice().sort();
+}
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted );
+alert( arr );
+```
+
+----
+
+## Crea una calculadora extensible
+
+Crea una función `Calculator` que cree objetos calculadores “extensibles”.
+
+La actividad consiste de dos partes.
+
+1. Primero, implementar el método calculate(str) que toma un string como "1 + 2" en el formato “NUMERO operador NUMERO” (delimitado por espacios) y devuelve el resultado. Debe entender más + y menos -.<br><br>
+
+    Ejemplo de uso:
+
+    ```js
+    let calc = new Calculator;
+
+    alert( calc.calculate("3 + 7") ); // 10
+    ```
+
+2. Luego agrega el método `addMethod(name, func)` que enseñe a la calculadora una nueva operación. Toma el operador `name` y la función con dos argumentos `func(a,b)` que lo implementa.<br><br>
+
+    Por ejemplo, vamos a agregar la multiplicación `*`, division `/` y potencia `**`:
+
+    ```js
+    let powerCalc = new Calculator;
+    powerCalc.addMethod("*", (a, b) => a* b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a** b);
+
+    let result = powerCalc.calculate("2 ** 3");
+    alert( result ); // 8
+    ```
+
+- Sin paréntesis ni expresiones complejas en esta tarea.
+- Los números y el operador deben estar delimitados por exactamente un espacio.
+- Puede haber manejo de errores si quisieras agregarlo.
+
+[Abrir en entorno controlado con pruebas](https://plnkr.co/edit/IQC3sKgMFYa8nzsB?p=preview).
+
+----
+
+**solución**
+
+- Por favor ten en cuenta cómo son almacenados los métodos. Simplemente son agregados a la propiedad this.methods.
+- Todos los test y conversiones son hechas con el método calculate. En el futuro puede ser extendido para soportar expresiones más complejas.
+
+```js
+function Calculator() {
+
+  this.methods = {
+    "-": (a, b) => a - b,
+    "+": (a, b) => a + b
+  };
+
+  this.calculate = function(str) {
+
+    let split = str.split(' '),
+      a = +split[0],
+      op = split[1],
+      b = +split[2];
+
+    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+      return NaN;
+    }
+
+    return this.methods[op](a, b);
+  };
+
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  };
+}
+```
+
+[Abrir la solución con pruebas en un entorno controlado](https://plnkr.co/edit/OiwGlN4lJk5ObjBG?p=preview).
+
+----
+
+## Mapa a nombres
+
+Tienes un array de objetos `user`, cada uno tiene `user.name`. Escribe el código que lo convierta en un array de nombres.
+
+Por ejemplo:
+
+```js
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = /*... tu código*/
+
+alert( names ); // John, Pete, Mary
+```
+
+----
+
+**solución**
+
+```js
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(item => item.name);
+
+alert( names ); // John, Pete, Mary
+```
+
+----
+
+## Mapa a objetos
+
+Tienes un array de objetos `user`, cada uno tiene `name`, `surname` e `id`.
+
+Escribe el código para crear otro array a partir de este, de objetos con `id` y `fullName`, donde `fullName` es generado a partir de `name` y `surname`.
+
+Por ejemplo:
+
+```js
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = /*... tu código ...*/
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // John Smith
+```
+
+Entonces, en realidad lo que necesitas es mapear un array de objetos a otro. Intenta usar => en este caso. Hay un pequeño truco.
+
+----
+
+**solución**
+
+```js
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = users.map(user => ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+}));
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+alert( usersMapped[0].id ); // 1
+alert( usersMapped[0].fullName ); // John Smith
+```
+
+Ten en cuenta que para las funciones arrow necesitamos usar paréntesis adicionales.
+
+No podemos escribirlo de la siguiente manera:
+
+```js
+let usersMapped = users.map(user => {
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+});
+```
+
+Como recordarás, existen dos funciones arrow: sin cuerpo `value => expr` y con cuerpo `value => {...}`.
+
+Acá JavaScript tratará `{` como el inicio de cuerpo de la función, no el inicio del objeto. La manera de resolver esto es encerrarlo dentro de paréntesis:
+
+```js
+let usersMapped = users.map(user => ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+}));
+```
+
+Ahora funciona.
+
+----
+
+## Ordena usuarios por edad
+
+Escribe la función `sortByAge(users)` que cree un array de objetos con al propiedad `age` y los ordene según `age`.
+
+Por ejemplo:
+
+```js
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ];
+
+sortByAge(arr);
+
+// ahora: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete
+```
+
+----
+
+**solución**
+
+```js
+function sortByAge(arr) {
+  arr.sort((a, b) => a.age - b.age);
+}
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ];
+
+sortByAge(arr);
+
+// ahora ordenado es: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete
+```
+
+----
+
+## Barajar un array
+
+importancia: 3
+Escribe la función `shuffle(array)` que baraje (reordene de forma aleatoria) los elementos del array.
+
+Múltiples ejecuciones de `shuffle` puede conducir a diferentes órdenes de elementos. Por ejemplo:
+
+```js
+let arr = [1, 2, 3];
+
+shuffle(arr);
+// arr = [3, 2, 1]
+
+shuffle(arr);
+// arr = [2, 1, 3]
+
+shuffle(arr);
+// arr = [3, 1, 2]
+// ...
+```
+
+Todos los reordenamientos de elementos tienen que tener la misma probabilidad. Por ejemplo, `[1,2,3]` puede ser reordenado como `[1,2,3]` o `[1,3,2]` o `[3,1,2]` etc, con igual probabilidad en cada caso.
+
+----
+
+**solución**
+
+Una solución simple podría ser:
+
+```js
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+let arr = [1, 2, 3];
+shuffle(arr);
+alert(arr);
+```
+
+Eso funciona de alguna manera, porque `Math.random() - 0.5`es un número aleatorio que puede ser positivo o negativo, por lo tanto, la función de ordenamiento reordena los elementos de forma aleatoria.
+
+Pero debido a que la función de ordenamiento no está hecha para ser usada de esta manera, no todas las permutaciones tienen la misma probabilidad.
+
+Por ejemplo, consideremos el código siguiente. Ejecuta `shuffle` 1000000 veces y cuenta las apariciones de todos los resultados posibles:
+
+```js
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+// cuenta las apariciones para todas las permutaciones posibles
+let count = {
+  '123': 0,
+  '132': 0,
+  '213': 0,
+  '231': 0,
+  '321': 0,
+  '312': 0
+};
+
+for (let i = 0; i < 1000000; i++) {
+  let array = [1, 2, 3];
+  shuffle(array);
+  count[array.join('')]++;
+}
+
+// muestra conteo de todas las permutaciones posibles
+for (let key in count) {
+  alert(`${key}: ${count[key]}`);
+}
+```
+
+Un resultado de ejemplo (depende del motor JS):
+
+```js
+123: 250706
+132: 124425
+213: 249618
+231: 124880
+312: 125148
+321: 125223
+```
+
+Podemos ver una clara tendencia: `123` y `213` aparecen mucho más seguido que otros.
+
+El resultado del código puede variar entre distintos motores JavaScript, pero ya podemos ver que esta forma de abordar el problema es poco confiable.
+
+¿Por qué no funciona? Generalmente hablando, `sort` es una “caja negra”: tiramos dentro un array y una función de ordenamiento y esperamos que el array se ordene. Pero debido a la total aleatoriedad de la comparación, la caja negra se vuelve loca y exactamente en que sentido se vuelve loca depende de la implementación específica, que difiere de un motor a otro.
+
+Existen otra formas mejores de realizar la tarea. Por ejemplo, hay un excelente algoritmo llamado [Algoritmo de Fisher-Yates](https://es.wikipedia.org/wiki/Algoritmo_de_Fisher-Yates). La idea es recorrer el array en sentido inverso e intercambiar cada elemento con un elemento aleatorio anterior:
+
+```js
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1)); // índice aleatorio entre 0 e i
+
+    // intercambia elementos array[i] y array[j]
+    // usamos la sintaxis "asignación de desestructuración" para lograr eso
+    // encontrarás más información acerca de esa sintaxis en los capítulos siguientes
+    // lo mismo puede ser escrito como:
+    // let t = array[i]; array[i] = array[j]; array[j] = t
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+```
+
+Probémoslo de la misma manera:
+
+```js
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// conteo de apariciones para todas las permutaciones posibles
+let count = {
+  '123': 0,
+  '132': 0,
+  '213': 0,
+  '231': 0,
+  '321': 0,
+  '312': 0
+};
+
+for (let i = 0; i < 1000000; i++) {
+  let array = [1, 2, 3];
+  shuffle(array);
+  count[array.join('')]++;
+}
+
+// muestra el conteo para todas las permutaciones posibles
+for (let key in count) {
+  alert(`${key}: ${count[key]}`);
+}
+```
+
+La salida del ejemplo:
+
+```js
+123: 166693
+132: 166647
+213: 166628
+231: 167517
+312: 166199
+321: 166316
+```
+
+Ahora sí se ve bien: todas las permutaciones aparecen con la misma probabilidad.
+
+Además, en cuanto al rendimiento el algoritmo de Fisher-Yates es mucho mejor, no hay “ordenamiento” superpuesto.
+
+----
+
+## Obtener edad promedio
+
+Escribe la función `getAverageAge(users)` que obtenga un array de objetos con la propiedad `age` y devuelva el promedio de `age`.
+
+La fórmula de promedio es `(age1 + age2 + ... + ageN) / N`.
+
+Por ejemplo:
+
+```js
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+```
+
+----
+
+**solución**
+
+```js
+function getAverageAge(users) {
+  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+}
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+
+alert( getAverageAge(arr) ); // 28
+```
+
+----
+
+## Filtrar elementos únicos de un array
+
+Partiendo del array arr.
+
+Crea una función unique(arr) que devuelva un array con los elementos que se encuentran una sola vez dentro de arr.
+
+Por ejemplo:
+
+```js
+function unique(arr) {
+  /*tu código*/
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(strings) ); // Hare, Krishna, :-O
+```
+
+[Abrir en entorno controlado con pruebas](https://plnkr.co/edit/LnLeQfsbMIPNQ3py?p=preview).
+
+----
+
+**solución**
+
+Recorramos los elementos dentro del array:
+
+- Para cada elemento vamos a comprobar si el array resultante ya tiene ese elemento.
+- Si ya lo tiene, ignora. Si no, agrega el resultado.
+
+```js
+function unique(arr) {
+  let result = [];
+
+  for (let str of arr) {
+    if (!result.includes(str)) {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(strings) ); // Hare, Krishna, :-O
+```
+
+El código funciona, pero tiene un problema potencial de desempeño.
+
+El método `result.includes(str)` internamente recorre el array `result` y compara cada elemento con `str` para encontrar una coincidencia.
+
+Por lo tanto, si hay `100` elementos en `result` y ninguno coincide con `str`, entonces habrá recorrido todo el array `result` y ejecutado 100 comparaciones. Y si result es tan grande como `10000`, entonces habrá `10000` comparaciones.
+
+Esto no es un problema en sí mismo, porque los motores JavaScript son muy rápidos, por lo que recorrer `10000` elementos de un array solo le tomaría microsegundos.
+
+Pero ejecutamos dicha comprobación para cada elemento de arr en el loop for.
+
+Entonces si `arr.length` es 10000 vamos a tener algo como 10000*10000 = 100 millones de comparaciones. Esto es realmente mucho.
+
+Por lo que la solución solo es buena para arrays pequeños.
+
+Más adelante en el capítulo [Map y Set](https://es.javascript.info/map-set) vamos a ver como optimizarlo.
+
+[Abrir la solución con pruebas en un entorno controlado](https://plnkr.co/edit/WlIavpbhy0DW1kY6?p=preview).
+
+----
+
+## Crea un objeto a partir de un array
+
+Supongamos que recibimos un array de usuarios con la forma `{id:..., name:..., age:... }`.
+
+Crea una función `groupById(arr)` que cree un objeto, con `id` como clave (key) y los elementos del array como valores.
+
+Por ejemplo:
+
+```js
+let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+let usersById = groupById(users);
+
+/*
+// después de llamar a la función deberíamos tener:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
+```
+
+Dicha función es realmente útil cuando trabajamos con información del servidor.
+
+Para esta actividad asumimos que cada `id` es único. No existen dos elementos del array con el mismo `id`.
+
+Usa el método de array `.reduce` en la solución.
+
+[Abrir en entorno controlado con pruebas](https://plnkr.co/edit/SFKeN094LVdW2d8N?p=preview).
+
+----
+
+**solución**
+
+```js
+function groupById(array) {
+  return array.reduce((obj, value) => {
+    obj[value.id] = value;
+    return obj;
+  }, {})
+}
+```
+
+[Abrir la solución con pruebas en un entorno controlado](https://plnkr.co/edit/rNJvz0BozjHvIMc4?p=preview).
+
+---
+
+[Index](../README.md)
