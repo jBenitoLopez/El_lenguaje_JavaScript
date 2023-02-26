@@ -854,7 +854,7 @@ function camelize(str) {
 
 ----
 
-## Filtrar un rango
+### Filtrar un rango
 
 Escribe una función `filterRange(arr, a, b)` que obtenga un array `arr`, busque los elementos con valor mayor o igual a `a` y menor o igual a `b` y devuelva un array con los resultados.
 
@@ -897,7 +897,7 @@ alert( arr ); // 5,3,8,1 (array original no modificado)
 
 ----
 
-## Filtrar rango "en el lugar"
+### Filtrar rango "en el lugar"
 
 Escribe una función `filterRangeInPlace(arr, a, b)` que obtenga un array `arr` y remueva del mismo todos los valores excepto aquellos que se encuentran entre `a` y `b`. El test es: `a ≤ arr[i] ≤ b`.
 
@@ -945,7 +945,7 @@ alert( arr ); // [3, 1]
 
 ----
 
-## Ordenar en orden decreciente
+### Ordenar en orden decreciente
 
 ```js
 let arr = [5, 2, 1, -10, 8];
@@ -969,7 +969,7 @@ alert( arr );
 
 ----
 
-## Copia y ordena un array
+### Copia y ordena un array
 
 Supongamos que tenemos un array `arr`. Nos gustaría tener una copia ordenada del mismo, pero mantener `arr` sin modificar.
 
@@ -1005,7 +1005,7 @@ alert( arr );
 
 ----
 
-## Crea una calculadora extensible
+### Crea una calculadora extensible
 
 Crea una función `Calculator` que cree objetos calculadores “extensibles”.
 
@@ -1080,7 +1080,7 @@ function Calculator() {
 
 ----
 
-## Mapa a nombres
+### Mapa a nombres
 
 Tienes un array de objetos `user`, cada uno tiene `user.name`. Escribe el código que lo convierta en un array de nombres.
 
@@ -1116,7 +1116,7 @@ alert( names ); // John, Pete, Mary
 
 ----
 
-## Mapa a objetos
+### Mapa a objetos
 
 Tienes un array de objetos `user`, cada uno tiene `name`, `surname` e `id`.
 
@@ -1201,7 +1201,7 @@ Ahora funciona.
 
 ----
 
-## Ordena usuarios por edad
+### Ordena usuarios por edad
 
 Escribe la función `sortByAge(users)` que cree un array de objetos con al propiedad `age` y los ordene según `age`.
 
@@ -1247,7 +1247,7 @@ alert(arr[2].name); // Pete
 
 ----
 
-## Barajar un array
+### Barajar un array
 
 importancia: 3
 Escribe la función `shuffle(array)` que baraje (reordene de forma aleatoria) los elementos del array.
@@ -1402,7 +1402,7 @@ Además, en cuanto al rendimiento el algoritmo de Fisher-Yates es mucho mejor, n
 
 ----
 
-## Obtener edad promedio
+### Obtener edad promedio
 
 Escribe la función `getAverageAge(users)` que obtenga un array de objetos con la propiedad `age` y devuelva el promedio de `age`.
 
@@ -1440,7 +1440,7 @@ alert( getAverageAge(arr) ); // 28
 
 ----
 
-## Filtrar elementos únicos de un array
+### Filtrar elementos únicos de un array
 
 Partiendo del array arr.
 
@@ -1511,7 +1511,7 @@ Más adelante en el capítulo [Map y Set](https://es.javascript.info/map-set) va
 
 ----
 
-## Crea un objeto a partir de un array
+### Crea un objeto a partir de un array
 
 Supongamos que recibimos un array de usuarios con la forma `{id:..., name:..., age:... }`.
 
