@@ -625,7 +625,7 @@ Normalmente, las fechas comienzan a partir del 1, sin embargo podemos pasar como
 
 ---
 
-¿Cuántos segundos transcurrieron el día de hoy?
+### ¿Cuántos segundos transcurrieron el día de hoy?
 
 Escribe una función `getSecondsToday()` que devuelva la cantidad de segundos transcurridos desde el comienzo del día.
 
