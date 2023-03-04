@@ -64,3 +64,17 @@
 [5.10 Asignación desestructurante](5-10_asignación_desestructurante/apuntes.md)<br>
 [5.11 Fecha y Hora](5-11_fecha_y_hora/apuntes.md)<br>
 [5.12 Métodos JSON, toJSON](5-12_metodos_json_tojson/apuntes.md)<br>
+
+## Trabajo avanzado con funciones
+
+[6.1 Recursión y pila](6.1_recursión_y_pila/apuntes.md)<br>
+[6.2 Parámetros Rest y operador Spread](6.2_parametros_rest_y_operador_spread/apuntes.md)<br>
+[6.3 Ámbito de Variable y el concepto "closure"](6.3_ambito_de_variable_y_el_concepto_closure/apuntes.md)<br>
+[6.4 La vieja "var"](6.4_la_vieja_var/apuntes.md)<br>
+[6.5 Objeto Global](6.5_objeto_global/apuntes.md)<br>
+[6.6 Función como objeto, NFE](6.6_funcion_como_objeto_nfe/apuntes.md)<br>
+[6.7 La sintaxis "new Function"](6.7_la_sintaxis_new_function/apuntes.md)<br>
+[6.8 Planificación: setTimeout y setInterval](6.8_planificacion_settimeout_y_setinterval/apuntes.md)<br>
+[6.9 Decoradores y redirecciones, call/apply](6.9_decoradores_y_redirecciones_call_apply/apuntes.md)<br>
+[6.10 Función bind: vinculación de funciones](6.10_funcion_bind_vinculacion_de_funciones/apuntes.md)<br>
+[6.11 Funciones de flecha revisadas](6.11_funciones_de_flecha_revisadas/apuntes.md)<br>
